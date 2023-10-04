@@ -1,3 +1,21 @@
+# Current
+
+## Run
+
+`npm run dev` 
+
+# Development
+
+Not for everyday use, but must use when dealing with DB changes
+## DB
+
+#### To reflect any schema changes into the prisma client
+
+`npx prisma generate`
+> 
+____
+
+> Desde aca hacia abajo, el repo original
 # Resend with Express
 
 This example shows how to use Resend with [Express](https://expressjs.com).

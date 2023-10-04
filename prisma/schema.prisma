@@ -1,0 +1,82 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id    String @id @default(cuid())
+  email String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  password Password?
+  notes    Note[]
+  debts    Debt[]
+}
+
+model Password {
+  hash String
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId String @unique
+}
+
+model Note {
+  id    String @id @default(cuid())
+  title String
+  body  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId String
+}
+
+model Debt {
+  id      String @id @default(cuid())
+  title   String
+  amount  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId String
+
+  debtors String[]
+  reminders Reminder[]
+
+  sentEmails SentEmail[]
+}
+
+model Reminder {
+  id                String @id @default(cuid())
+  notificationDate  DateTime
+  
+  debt   Debt   @relation(fields: [debtId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  debtId String
+}
+
+model SentEmail {
+  id      String @id @default(cuid())
+
+  provider    String
+  providerId  String @default("")
+
+  to          String
+  from        String
+  subject     String
+  body        String
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  debt   Debt   @relation(fields: [debtId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  debtId String
+}

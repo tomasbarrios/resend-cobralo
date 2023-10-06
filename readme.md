@@ -13,6 +13,16 @@ Not for everyday use, but must use when dealing with DB changes
 
 `npx prisma generate`
 > 
+
+## References
+
+First approach is was to make a express server, the we realized is not needed.
+- [Article (Lazy Panda)](https://lazypandatech.com/blog/NodeJS/45/How-to-create-a-Node-TypeScript-based-Scheduled-job-using-node-corn/)
+- [Source](https://github.com/lazypanda-instance/corn-job-email-scheduler/blob/master/src/jobs/email-scheduler/emailScheduler.ts)
+#### Resend
+- [With express](https://github.com/resendlabs/resend-express-example/blob/main/index.ts)
+- [With node (no express)](https://github.com/resendlabs/resend-node-example/blob/main/package.json)
+
 ____
 
 > Desde aca hacia abajo, el repo original

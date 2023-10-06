@@ -10,6 +10,7 @@ import express, { Request, Response } from 'express';
  * Prisma deps
  */
 import { PrismaClient } from "@prisma/client";
+import { EmailScheduler } from './src/EmailScheduler';
 
 /**
  * init
@@ -48,6 +49,12 @@ app.get('/pending', async (req, res) => {
   const users = await prisma.reminder.findMany()
   res.json(users)
 })
+
+app.get('/on', async (req, res) => {
+  const emailJob = new EmailScheduler({ from: "", to: "", body: "", subject: ""});
+  res.status(200).send("Jobs for testing email are Initiated");
+})
+
 
 app.listen(3000, () => {
   if (!process.env.RESEND_API_KEY) {

@@ -1,6 +1,9 @@
-# Current
+# Latest updates
+Implementation of cron in fly.io [Cron example for fly](https://github.com/hrumhurum/docker-recipes/tree/main/cron)
 
-## Run
+## Previous updates
+
+# Run
 
 `npm run dev` 
 
@@ -23,6 +26,9 @@ First approach is was to make a express server, the we realized is not needed.
 - [With express](https://github.com/resendlabs/resend-express-example/blob/main/index.ts)
 - [With node (no express)](https://github.com/resendlabs/resend-node-example/blob/main/package.json)
 
+#### Prisma
+
+[Prisma with node](https://github.com/prisma/prisma-examples/tree/latest/javascript/script)
 ____
 
 > Desde aca hacia abajo, el repo original

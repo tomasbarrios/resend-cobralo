@@ -15,6 +15,6 @@ cron
 echo "Cron has been started." >> /app/var/log/cron.log
 
 # Main app
-# echo "Starting web server (Caddy)..."
-# cd /app/etc/caddy
-# caddy run
+echo "Starting web server (Caddy)..."
+cd /app/etc/caddy
+caddy run

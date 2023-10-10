@@ -17,6 +17,11 @@ Not for everyday use, but must use when dealing with DB changes
 `npx prisma generate`
 > 
 
+### Docker
+
+exec bash ([stackoverflow](https://stackoverflow.com/questions/42353949/executing-bash-then-running-commands-in-docker))
+`docker exec -it container mycommand`
+
 ## References
 
 First approach is was to make a express server, the we realized is not needed.

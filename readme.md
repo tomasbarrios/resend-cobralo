@@ -1,5 +1,8 @@
 # Latest updates
-Implementation of cron in fly.io [Cron example for fly](https://github.com/hrumhurum/docker-recipes/tree/main/cron)
+
+### Deploy on fly.io
+Using this implementation of cron in fly.io [Cron example for fly](https://github.com/hrumhurum/docker-recipes/tree/main/cron)
+We can now manage to see the cron running in `/app/var/log/cron.log` as the post suggests
 
 ## Previous updates
 

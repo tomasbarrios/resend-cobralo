@@ -1,10 +1,10 @@
-0.0.0.0:8080 {
+{
+    auto_https off
 
-    handle_path /logs/* {
-        root * /app/var/log
-        file_server
-    }
+}
 
+localhost:8080 {
     root * /app/www
     file_server
 }
+

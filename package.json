@@ -1,13 +1,14 @@
 {
-  "name": "resend-express-example",
+  "name": "resend-cobralo",
   "private": true,
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
     "dev": "ts-node-dev index.ts",
     "test:server": "ts-node-dev indexExpressServer.ts",
     "job:createPendingDelivery": "ts-node-dev initCreateDeliveryAttemptsPending.ts",
-    "job:startDelivery": "ts-node-dev initSendDeliveryAttemptsPending.ts"
+    "job:startDelivery": "ts-node-dev initSendDeliveryAttemptsPending.ts",
+    "setup": "prisma generate && prisma migrate deploy && prisma db seed",
+    "start": "node dist/initCreateDeliveryAttemptsPending.js"
   },
   "dependencies": {
     "@prisma/client": "5.3.1",

@@ -4,7 +4,7 @@
 }
 
 localhost:8080 {
-    root * /app/www
+    root * /myapp/www
     file_server
 }
 

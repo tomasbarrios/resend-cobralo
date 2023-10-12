@@ -3,7 +3,7 @@ require("dotenv").config();
 /**
  * Resend deps
  */
-import { Resend } from "resend";
+// import { Resend } from "resend";
 //import express, { Request, Response } from 'express';
 
 /**
@@ -18,7 +18,7 @@ import { getAllRemindersBeforeNow } from "./src/services/reminders";
  */
 const prisma = new PrismaClient();
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 //const app = express();
 
 /**
@@ -26,7 +26,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
  * For each, will create a `Delivery Attempt`
  */
 async function main() {
-  if (!process.env.RESEND_API_KEY) {
+  if (!process.env.DATABASE_URL) {
     throw `Abort: You need to define RESEND_API_KEY in the .env file.`;
   } else {
     //   const emailJob = new EmailScheduler();

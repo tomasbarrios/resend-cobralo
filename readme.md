@@ -20,6 +20,16 @@ Not for everyday use, but must use when dealing with DB changes
 `npx prisma generate`
 > 
 
+### Local build (on docker)
+
+This is without using docker-compose
+
+`docker build --progress=plain -t resend-cobralo:latest .`               
+
+`docker run --rm -p 8080:8080 resend-cobralo:latest`
+
+Still pending to configure through docker-compose
+
 ### Docker
 
 exec bash ([stackoverflow](https://stackoverflow.com/questions/42353949/executing-bash-then-running-commands-in-docker))
